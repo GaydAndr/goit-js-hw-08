@@ -42,6 +42,10 @@ function handleSubmit(event) {
     elements: { email, message },
   } = event.currentTarget;
 
+  if (email.value === '' || message.value === '') {
+    return alert('Будь-ласка заповніть всі поля!');
+  }
+
   userData.email = email.value;
   userData.message = message.value;
 

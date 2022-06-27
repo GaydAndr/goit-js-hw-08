@@ -10,9 +10,10 @@ let currentTime = 0;
 // console.log(currentTime);
 
 function playerOn(event) {
-  currentTime = event.seconds;
-  localStorage.setItem('videoplayer-current-time', currentTime);
+  localStorage.setItem('videoplayer-current-time', event.seconds);
 }
 currentTime = localStorage.getItem('videoplayer-current-time');
 
-player.setCurrentTime(currentTime);
+if (currentTime) {
+  player.setCurrentTime(currentTime);
+}
